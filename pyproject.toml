@@ -1,0 +1,30 @@
+[project]
+name = "fastapiprob"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Ariel Pardo",email = "adoorno@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard] (>=0.127.0,<0.128.0)",
+    "sqlalchemy (>=2.0.45,<3.0.0)",
+    "sqlmodel (>=0.0.29,<0.0.30)",
+    "pandas (>=2.3.3,<3.0.0)",
+    "pdfplumber (>=0.11.8,<0.12.0)",
+    "openpyxl (>=3.1.5,<4.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "fastapiprob", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "ipython (>=9.8.0,<10.0.0)",
+    "python-lsp-server (>=1.14.0,<2.0.0)"
+]
