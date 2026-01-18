@@ -6,11 +6,11 @@ class User(SQLModel, table=True):
     name: str
     role: str
     email: str = Field(index=True, unique=True)
-    hash_pass: str
+    hashed_password: str
     
 class Document(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)
-    user_id: int = Field(foreign_key="user.id")
+    user_id: int = Field(foreign_key="user.id", index=True)
 
     pdf_name: str
     pdf_path: str
